@@ -1,10 +1,12 @@
 # Разница между датами в секундах
-
 from datetime import datetime
 
-date1 = datetime(2025, 1, 1, 12, 0, 0)
-date2 = datetime(2025, 1, 2, 12, 0, 0)
+date1_str = input("Введите первую дату и время (ГГГГ-ММ-ДД ЧЧ:ММ:СС): ")
+date2_str = input("Введите вторую дату и время (ГГГГ-ММ-ДД ЧЧ:ММ:СС): ")
+
+date1 = datetime.strptime(date1_str, "%Y-%m-%d %H:%M:%S")
+date2 = datetime.strptime(date2_str, "%Y-%m-%d %H:%M:%S")
 
 difference = date2 - date1
 
-print(difference.total_seconds())
+print("Разница в секундах:", difference.total_seconds())
